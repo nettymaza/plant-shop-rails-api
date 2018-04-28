@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+#GET /api/item
+#GET /api/item/:id
+#POST /api/item
+#POST /api/item/:id
+#DELETE /api/item/:id
+
+#Item Model
+
+#name
+#price
+#img_url
+#likes
