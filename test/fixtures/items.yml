@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  price: 1
+  info: MyString
   img_url: MyString
   likes_count: 1
 
 two:
   name: MyString
-  price: 1
+  info: MyString
   img_url: MyString
   likes_count: 1
