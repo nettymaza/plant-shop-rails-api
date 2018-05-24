@@ -8,9 +8,9 @@ class Api::ItemsController < ApplicationController
   def create
     item = Item.new(item_params)
     if item.save
-      render json: item
+      render :json => item
     else
-      render json:{ message: item.errors}, status: 400
+      render json:{ :errors => item.errors.messages}, status: 400
     end
   end
 
@@ -22,7 +22,7 @@ class Api::ItemsController < ApplicationController
     if @item.update(item_params)
       render json: @item
     else
-      render json:{ message: @item.errors}, status: 400
+      render json:{ :errors => @item.errors.messages}, status: 400
     end
   end
 
@@ -32,6 +32,14 @@ class Api::ItemsController < ApplicationController
     else
       render json: { message: "Unable to remove this plant"}, status: 400
     end
+  end
+
+  def add_like
+    @item = Item.find(params[:id])
+    @item.likes_count += 1
+    @item.save
+    
+    render json: @item
   end
 
   private
